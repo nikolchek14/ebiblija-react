@@ -48,7 +48,7 @@
     }
   },
   "scripts": {
-    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "start": "rescripts start",
     "build": "rescripts build",
     "test": "rescripts test",

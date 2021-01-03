@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Biblija from './Biblija.json';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          {Biblija[0].voved}
         </a>
       </header>
     </div>
