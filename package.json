@@ -53,6 +53,7 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
+    "dev-start": "react-scripts start",
     "ebuild": "npm run build && node_modules/.bin/build",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
