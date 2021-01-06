@@ -1,0 +1,65 @@
+.popup-content {
+    width: 80% !important;
+    height: 90%;
+    overflow-y: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sodrzina-wrapper {
+    width: 100%;
+    text-align: center;
+}
+.sodrzina {
+    display: inline-table;
+}
+
+.sodrzina-link {
+    padding: 10px 32px;
+    width: 210px;
+    display: flex;
+}
+
+.sodrzina-button {
+        all: unset;
+      background-color: transparent;
+      width: 100%;
+      border: none;
+      color: gray;
+      padding: 12px 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+    font-weight: bold;
+      border-bottom: 2px gray solid;
+}
+
+.sodrzina-naslov {
+     margin: 6px 32px;
+     padding: 6px 8px;
+     display: block;
+     font-size: 21px;
+     font-weight: bolder;
+     color: grey;
+}
+
+.sodrzina-button:hover {
+  background-color: #4cc9f0;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  color: white;
+      padding: 12px 8px;
+          border-bottom: 2px transparent solid;
+}
+
+.sodrzina-aktivna {
+  background-color: #b9e769;
+    -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+    -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+    box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+  color: white;
+      padding: 12px 8px;
+        border-bottom: 2px transparent solid;
+}

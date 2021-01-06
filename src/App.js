@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Osnova from './Osnova.js';
+import Osnova from './knigi/Osnova.js';
 
 function App() {
   return (
