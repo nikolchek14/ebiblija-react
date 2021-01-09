@@ -2,8 +2,8 @@
     width: 80% !important;
     height: 90%;
     overflow-y: scroll;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .sodrzina-wrapper {
     width: 100%;
@@ -20,19 +20,19 @@
 }
 
 .sodrzina-button {
-        all: unset;
-      background-color: transparent;
-      width: 100%;
-      border: none;
-      color: gray;
-      padding: 12px 8px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 12px;
-      cursor: pointer;
+    all: unset;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    color: gray;
+    padding: 12px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
     font-weight: bold;
-      border-bottom: 2px gray solid;
+    border-bottom: 2px gray solid;
 }
 
 .sodrzina-naslov {
@@ -61,5 +61,94 @@
     box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
   color: white;
       padding: 12px 8px;
-        border-bottom: 2px transparent solid;
+      border-bottom: 2px transparent solid;
+}
+
+.meni {
+    background-color:white;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px grey solid;
+    position: fixed;
+    top: 0px;
+    margin-bottom: 4px;
+    box-shadow: 0 4px 2px -1px #8080808f;
+}
+
+.meni-item {
+    display: inline-block;
+}
+
+.meni-meta {
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+}
+
+.voved {
+    margin-top: 75px;
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: justify;
+    padding-bottom: 30px;
+    border-bottom: 1px grey solid;
+}
+.voved-naslov {
+    text-align: center;
+}
+h4.voved-naslov {
+    margin-bottom: 10px;
+}
+.voved-linija {
+    text-indent:2cm;
+    display: inline-block;
+}
+
+.glava {
+    width: 80%;
+    margin: 0 10%;
+    text-align: justify;
+    padding: 10px 0%;
+    align-items: stretch;
+    display: flex;
+}
+
+.glava-broj {
+    font-weight: 700;
+    font-size: x-large;
+    padding: 0 5px 0 0;
+}
+.stih-broj {
+    font-weight: 300;
+    font-size: medium;
+    padding: 0 5px 0 0;
+    vertical-align: super;
+}
+
+.podnaslovi {
+    font-weight: 700;
+    font-size: large;
+    text-align: center;
+}
+
+.glava-tekst {
+    display: inline-block;
+    width: 67%;
+}
+
+.glava-referenci {
+    width: 33%;
+    display: inline-block;
+}
+
+.stih-referenca {
+    font-weight:700;
+    font-size: small;
+    vertical-align: super;
 }

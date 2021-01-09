@@ -1,26 +1,19 @@
 import React from "react";
 
-export default function Stih({stih}) {
-    const buildReferenci = (stih) => stih.referenci.map((el, index) => {
-        return (<span key={index}>
-            {el.referenca}
-        </span>);
-    });
-
+export default function Stih({stih, glavaBr}) {
     const buildPodnaslovi = () => {
-        return (<div>
-            {stih.megunaslov && <div><b>{stih.megunaslov}</b></div>}
-            {stih.podnaslov && <div><b>{stih.podnaslov}</b></div>}
-            {stih.podnaslov_referenca && <div><b>{stih.podnaslov_referenca}</b></div>}
+        return (<div className='podnaslovi'>
+            {stih.megunaslov && <div className='megunaslov'>{stih.megunaslov}</div>}
+            {stih.podnaslov && <div className='podnaslov'>{stih.podnaslov}</div>}
+            {stih.podnaslov_referenca && <div className='podnaslov_referenci'>{stih.podnaslov_referenca}</div>}
         </div>)
     }
 
   const buildStih = () => {
-   return (<div>
+   return (<div className='stih-wrapper'>
     {buildPodnaslovi()}
-    <span>{stih.r_br}</span>
+    <span className={stih.r_br === 1 ? 'glava-broj' : 'stih-broj'}>{stih.r_br === 1 ? glavaBr : stih.r_br}</span>
     {stih.tekst}
-    {stih.referenci && <div>{buildReferenci(stih)}</div>}
    </div>)
   }
 
