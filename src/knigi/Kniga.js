@@ -4,8 +4,8 @@ import Meni from './Meni.js';
 
 export default function Kniga({kniga, sodrzina}) {
   const buildMeni = () => <Meni kniga={kniga} sodrzina={sodrzina} />
-  const buildVoved = () => kniga.voved.map((el, index) => <span className='voved-linija' key={index}>{el}</span>)
-  const buildGlavi = () => kniga.glavi.map((el, index) => <Glava glava={el} />)
+  const buildVoved = () => kniga.voved.map((el, index) => <span className='voved-linija' key={`voved-${index}`}>{el}</span>)
+  const buildGlavi = () => kniga.glavi.map((el, index) => <Glava glava={el} key={`glava-${index}`} />)
   const buildKniga = () => {
     return (<div>
         {buildMeni()}

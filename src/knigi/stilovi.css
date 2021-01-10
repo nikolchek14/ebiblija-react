@@ -1,4 +1,4 @@
-.popup-content {
+.sodrzina-popup-content {
     width: 80% !important;
     height: 90%;
     overflow-y: scroll;
@@ -73,6 +73,7 @@
     top: 0px;
     margin-bottom: 4px;
     box-shadow: 0 4px 2px -1px #8080808f;
+    z-index: 999;
 }
 
 .meni-item {
@@ -97,7 +98,7 @@
     margin-left: 10%;
     text-align: justify;
     padding-bottom: 30px;
-    border-bottom: 1px grey solid;
+    border-bottom: 1px lightgrey solid;
 }
 .voved-naslov {
     text-align: center;
@@ -140,15 +141,42 @@ h4.voved-naslov {
 .glava-tekst {
     display: inline-block;
     width: 67%;
+    position: relative;
+    padding-right: 14px;
+    border-right: 1px lightgrey solid;
 }
 
 .glava-referenci {
     width: 33%;
     display: inline-block;
+    position: relative;
+    padding-left: 14px;
+}
+
+.stih-referenci {
+    text-align: left;
 }
 
 .stih-referenca {
     font-weight:700;
     font-size: small;
     vertical-align: super;
+    padding-right: 5px;
+}
+
+.referenca {
+    font-size: small;
+    display: inline-block;
+    margin-right: 7px;
+    border-bottom: 1px gainsboro solid;
+}
+
+.futnota-broj {
+    all: unset;
+    text-decoration: underline;
+    font-size: small;
+    padding: 0 1px;
+    vertical-align: super;
+    font-weight: 700;
+    color: lightblue;
 }

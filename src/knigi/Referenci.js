@@ -1,13 +1,15 @@
-import React from "react";
+import React, {forwardRef} from "react";
 
-export default function Referenci({stih}) {
+const Referenci = ({stih, style}, ref) => {
     const buildReferenci = () => stih.referenci.map((el, index) => {
         return (
-            <span key={index}>
+            <span className='referenca' key={index}>
             {el.referenca}
         </span>
         );
     });
 
-  return <div className='stih-referenci'> <span className='stih-referenca'>{stih.r_br}</span> {buildReferenci()}</div>;
+  return <div style={style} className='stih-referenci' ref={ref}> <span className='stih-referenca'>{stih.r_br}</span> {buildReferenci()}</div>;
 }
+
+export default forwardRef(Referenci);

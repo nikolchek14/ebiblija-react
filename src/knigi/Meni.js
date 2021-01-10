@@ -7,7 +7,7 @@ export default function Meni({kniga, sodrzina}) {
     const [aktivno, setAktivno] = useState(false);
     return <div className='meni'>
              <span className='meni-item'>
-                <Popup onClose={() => setAktivno(false)} modal={true} trigger={<button style={{all: 'unset', appearance: 'button'}}>
+                <Popup className='sodrzina-popup' onClose={() => setAktivno(false)} modal={true} trigger={<button style={{all: 'unset', appearance: 'button'}}>
                     <Hamburger className='meni-icon' toggled={aktivno} toggle={setAktivno} /></button>}>
                     {sodrzina}
                 </Popup>
