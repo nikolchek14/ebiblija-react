@@ -1,11 +1,16 @@
 import React, {forwardRef} from "react";
+import Popup from 'reactjs-popup';
+import ReferencaPopup from './ReferencaPopup.js';
 
-const Referenci = ({stih, style}, ref) => {
+const Referenci = ({stih, style, kniga, glava}, ref) => {
     const buildReferenci = () => stih.referenci.map((el, index) => {
         return (
-            <span className='referenca' key={index}>
-            {el.referenca}
-        </span>
+            <Popup className='referenca-popup'
+                   key={`referenca-${index}`}
+                   modal={true}
+                   trigger={<button className='referenca'>{el.referenca}</button>}>
+                <ReferencaPopup stih={stih} referenca={el} kniga={kniga} glava={glava} />
+            </Popup>
         );
     });
 

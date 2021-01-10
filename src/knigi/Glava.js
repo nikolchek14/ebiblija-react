@@ -3,7 +3,7 @@ import Stih from './Stih.js';
 import Referenci from './Referenci.js';
 import useObserver from './useObserver.js';
 
-export default function Glava({glava}) {
+export default function Glava({glava, kniga}) {
     const [offsets, setOffsets] = useState(null);
     const tekstRef = useRef(null);
     const refRefs = useRef([]);
@@ -48,7 +48,7 @@ export default function Glava({glava}) {
                 position: 'absolute',
             } : null;
             const getRef = (element) => (refRefs.current.push(element))
-            el.referenci && referenci.push(<Referenci style={style} stih={el} ref={getRef} key={`referenci-${index}`} />);
+            el.referenci && referenci.push(<Referenci style={style} stih={el} ref={getRef} key={`referenci-${index}`} kniga={kniga} glava={glava.r_br} />);
         });
 
         return <div className='glava'>

@@ -5,6 +5,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+.referenca-popup-content {
+    width: 80% !important;
+    height: 90%;
+    overflow-y: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
 .sodrzina-wrapper {
     width: 100%;
     text-align: center;
@@ -165,10 +172,19 @@ h4.voved-naslov {
 }
 
 .referenca {
+    all: unset;
     font-size: small;
     display: inline-block;
     margin-right: 7px;
     border-bottom: 1px gainsboro solid;
+    cursor: pointer;
+}
+
+.referenca:hover {
+    margin-right: 7px;
+    border-bottom: 2px gainsboro solid;
+    font-weight:bold;
+    cursor: pointer;
 }
 
 .futnota-broj {
@@ -179,4 +195,71 @@ h4.voved-naslov {
     vertical-align: super;
     font-weight: 700;
     color: lightblue;
+    cursor: pointer;
+}
+
+.referenca-popup-content {
+    padding: 0px !important;
+}
+
+.ref-popup {
+    width: 100%;
+    height: 100%;
+}
+.ref-popup-levo {
+    width: 25%;
+    display: inline-block;
+    border-right: 2px grey solid;
+    box-shadow: 5px 0px 5px grey;
+    height: 100%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+}
+.ref-popup-desno {
+    width: 75%;
+    display: inline-block;
+    position: absolute;
+    left: 25%;
+    top: 0;
+    overflow-y: scroll;
+    height: 100%;
+}
+.ref-popup-kniga {
+    font-size: large;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: grey;
+}
+.ref-popup-stih {
+    display: inline-block;
+    padding: 10px 5px 10px 15px;
+    text-align: justify;
+    border-bottom: 2px grey solid;
+}
+.ref-popup-refs {
+    padding: 10px 15px 10px 0px;
+    display: inline-block;
+}
+
+.ref-popup-ref {
+    display: inline-block;
+    margin-right: 7px;
+    border-bottom: 1px gainsboro solid;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+.ref-popup-aktivno {
+    font-weight:bold;
+    border-bottom: 2px gainsboro solid;
+    color: grey;
+}
+
+.ref-popup-ref:hover {
+    margin-right: 7px;
+    border-bottom: 2px gainsboro solid;
+    font-weight:bold;
+    cursor: pointer;
+    color: black;
 }
