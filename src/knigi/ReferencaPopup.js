@@ -1,8 +1,7 @@
 import React from "react";
 import Kniga from './Kniga.js';
-import Biblija from './Biblija.json';
 
-export default function ReferencaPopup({stih, referenca, kniga, glava}) {
+export default function ReferencaPopup({stih, referenca, kniga, biblija, glava, setRefkniga, setGlava, setStih, setReferenca, setOpen}) {
   const buildReferenci = () => stih.referenci.map((el, index) => {
       return (<div>
         <span className={`ref-popup-ref ${el.referenca === referenca.referenca ? 'ref-popup-aktivno' : null}`} >{el.referenca}</span>
@@ -10,8 +9,9 @@ export default function ReferencaPopup({stih, referenca, kniga, glava}) {
   });
 
   const buildRefKniga = () => {
-      const refKniga = Biblija.find((el) => el.meta_fajl === referenca.meta_link.substring(0, referenca.meta_link.indexOf('#')));
-      return <Kniga key={refKniga.meta_fajl} kniga={refKniga} />
+      const refKniga = biblija.find((el) => el.meta_fajl === referenca.meta_link.substring(0, referenca.meta_link.indexOf('#')));
+      return <Kniga key={refKniga.meta_fajl} kniga={refKniga} biblija={biblija}
+        setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih} setOpen={setOpen} />
   };
 
   return (<div className='ref-popup'>
