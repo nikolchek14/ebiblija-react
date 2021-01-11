@@ -4,13 +4,15 @@ import Kniga from './Kniga.js';
 export default function ReferencaPopup({stih, referenca, kniga, biblija, glava, setRefkniga, setGlava, setStih, setReferenca, setOpen}) {
   const glaviRef = useRef([]);
   useEffect(() => {
-     console.warn(glaviRef.current)
+     console.warn(glaviRef.current);
      const meta_part = referenca.meta_link.substring(referenca.meta_link.indexOf('#')+1);
      const refGlava = parseInt(meta_part.substring(meta_part.indexOf('g')+1,meta_part.indexOf('s')));
      const refStih = parseInt(meta_part.substring(meta_part.indexOf('s')+1));
-     glaviRef.current[refGlava-1].children[0].children[refStih-1].scrollIntoView();
+     const refs = glaviRef.current.filter((value) => value !== null);
+     console.warn(refs);
+     refs[refGlava-1] && refs[refGlava-1].children[0].children[refStih-1].scrollIntoView();
      // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [glaviRef.current]);
+  }, [kniga, glava, stih, referenca]);
 
     const refClick = (ref) => {
         setRefkniga(kniga);
