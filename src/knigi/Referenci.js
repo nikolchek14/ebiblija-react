@@ -15,7 +15,8 @@ const Referenci = ({stih, style, kniga, glava, setRefkniga, setGlava, setStih, s
         );
     });
 
-  return <div style={style} className='stih-referenci' ref={ref}> <span className='stih-referenca'>{stih.r_br}</span> {buildReferenci()}</div>;
+    return <div style={style} className='stih-referenci' ref={ref}><span
+        className='stih-referenca'>{stih.r_br}</span> {buildReferenci()}</div>;
 }
 
 export default forwardRef(Referenci);

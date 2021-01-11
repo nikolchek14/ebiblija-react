@@ -5,6 +5,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .referenca-popup-content {
     width: 80% !important;
     height: 90%;
@@ -12,10 +13,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .sodrzina-wrapper {
     width: 100%;
     text-align: center;
 }
+
 .sodrzina {
     display: inline-table;
 }
@@ -43,36 +46,36 @@
 }
 
 .sodrzina-naslov {
-     margin: 6px 32px;
-     padding: 6px 8px;
-     display: block;
-     font-size: 21px;
-     font-weight: bolder;
-     color: grey;
+    margin: 6px 32px;
+    padding: 6px 8px;
+    display: block;
+    font-size: 21px;
+    font-weight: bolder;
+    color: grey;
 }
 
 .sodrzina-button:hover {
-  background-color: #4cc9f0;
-  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
-  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
-  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
-  color: white;
-      padding: 12px 8px;
-          border-bottom: 2px transparent solid;
+    background-color: #4cc9f0;
+    -webkit-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+    -moz-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+    box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+    color: white;
+    padding: 12px 8px;
+    border-bottom: 2px transparent solid;
 }
 
 .sodrzina-aktivna {
-  background-color: #b9e769;
+    background-color: #b9e769;
     -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
     -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
     box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
-  color: white;
-      padding: 12px 8px;
-      border-bottom: 2px transparent solid;
+    color: white;
+    padding: 12px 8px;
+    border-bottom: 2px transparent solid;
 }
 
 .meni {
-    background-color:white;
+    background-color: white;
     width: 100%;
     text-align: left;
     border-bottom: 1px grey solid;
@@ -107,14 +110,17 @@
     padding-bottom: 30px;
     border-bottom: 1px lightgrey solid;
 }
+
 .voved-naslov {
     text-align: center;
 }
+
 h4.voved-naslov {
     margin-bottom: 10px;
 }
+
 .voved-linija {
-    text-indent:2cm;
+    text-indent: 2cm;
     display: inline-block;
 }
 
@@ -132,6 +138,7 @@ h4.voved-naslov {
     font-size: x-large;
     padding: 0 5px 0 0;
 }
+
 .stih-broj {
     font-weight: 300;
     font-size: medium;
@@ -165,7 +172,7 @@ h4.voved-naslov {
 }
 
 .stih-referenca {
-    font-weight:700;
+    font-weight: 700;
     font-size: small;
     vertical-align: super;
     padding-right: 5px;
@@ -183,7 +190,7 @@ h4.voved-naslov {
 .referenca:hover {
     margin-right: 7px;
     border-bottom: 2px gainsboro solid;
-    font-weight:bold;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -206,6 +213,7 @@ h4.voved-naslov {
     width: 100%;
     height: 100%;
 }
+
 .ref-popup-levo {
     width: 25%;
     display: inline-block;
@@ -216,6 +224,7 @@ h4.voved-naslov {
     position: absolute;
     top: 0;
 }
+
 .ref-popup-desno {
     width: 75%;
     display: inline-block;
@@ -225,18 +234,21 @@ h4.voved-naslov {
     overflow-y: scroll;
     height: 100%;
 }
+
 .ref-popup-kniga {
     font-size: large;
     font-weight: 700;
     margin-bottom: 14px;
     color: grey;
 }
+
 .ref-popup-stih {
     display: inline-block;
     padding: 10px 5px 10px 15px;
     text-align: justify;
     border-bottom: 2px grey solid;
 }
+
 .ref-popup-refs {
     padding: 10px 15px 10px 0px;
     display: inline-block;
@@ -251,7 +263,7 @@ h4.voved-naslov {
 }
 
 .ref-popup-aktivno {
-    font-weight:bold;
+    font-weight: bold;
     border-bottom: 2px gainsboro solid;
     color: grey;
 }
@@ -259,7 +271,7 @@ h4.voved-naslov {
 .ref-popup-ref:hover {
     margin-right: 7px;
     border-bottom: 2px gainsboro solid;
-    font-weight:bold;
+    font-weight: bold;
     cursor: pointer;
     color: black;
 }

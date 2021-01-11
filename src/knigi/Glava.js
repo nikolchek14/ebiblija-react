@@ -10,7 +10,7 @@ const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setO
     useEffect(() => {
         updateTops();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+    }, []);
 
     const updateTops = () => {
         const tops = [];
@@ -18,15 +18,15 @@ const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setO
             const stihBr = el && parseInt(el.getElementsByClassName('stih-referenca')[0].innerHTML);
             const height = el && el.clientHeight;
             const top = el && el.offsetTop;
-            return { stihBr: stihBr, height: height, top: top}
+            return {stihBr: stihBr, height: height, top: top}
         });
-        tekstRef && tekstRef.current && Array.from(tekstRef.current.getElementsByClassName('stih-position')).forEach((el,index) => {
-            if(index === 0) {
+        tekstRef && tekstRef.current && Array.from(tekstRef.current.getElementsByClassName('stih-position')).forEach((el, index) => {
+            if (index === 0) {
                 tops.push(el.offsetTop);
             } else {
                 const prevElement = refs.find((el) => el.stihBr === index);
                 const prevHeight = prevElement ? prevElement.height : 0;
-                const top = el.offsetTop > prevHeight + tops[index-1] ? el.offsetTop : prevHeight + tops[index-1];
+                const top = el.offsetTop > prevHeight + tops[index - 1] ? el.offsetTop : prevHeight + tops[index - 1];
                 tops.push(top);
             }
         });
@@ -43,18 +43,20 @@ const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setO
         const referenci = [];
         refRefs.current = [];
         glava.stihovi.forEach((el, index) => {
-            stihovi.push(<Stih stih={el} glavaBr={glava.r_br} key={`stih-${index}`} />);
+            stihovi.push(<Stih stih={el} glavaBr={glava.r_br} key={`stih-${index}`}/>);
             const style = offsets ? {
-                top: `${offsets[index]+5}px`,
+                top: `${offsets[index] + 5}px`,
                 position: 'absolute',
             } : null;
             const getRef = (element) => (refRefs.current.push(element))
             el.referenci && referenci.push(<Referenci style={style} stih={el} ref={getRef} key={`referenci-${index}`}
-                kniga={kniga} glava={glava.r_br} setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih} setOpen={setOpen}/>);
+                                                      kniga={kniga} glava={glava.r_br} setRefkniga={setRefkniga}
+                                                      setGlava={setGlava} setReferenca={setReferenca} setStih={setStih}
+                                                      setOpen={setOpen}/>);
         });
 
         return <div className='glava' ref={ref}>
-            <span className='glava-tekst' ref={tekstRef} >{stihovi}</span>
+            <span className='glava-tekst' ref={tekstRef}>{stihovi}</span>
             <span className='glava-referenci'>{referenci}</span>
         </div>;
     }
