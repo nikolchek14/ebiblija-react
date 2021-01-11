@@ -12,14 +12,13 @@ const Stih = ({stih, glavaBr}) => {
 
     const buildStihFutnoti = () => {
         const futnoti = new Map();
-        stih.futnoti.forEach((el) => {
-            const futnota = (<Popup className='futnota-popup' trigger={<button className='futnota-broj'>{el.r_br}</button>} position="right center">
+        stih.futnoti.forEach((el,index) => {
+            const futnota = (<Popup key={`futnota-${index}`} className='futnota-popup' trigger={<button className='futnota-broj'>{el.r_br}</button>} position="right center">
                                 <div>{el.tekst}</div>
                               </Popup>);
             futnoti.set(el.mesto, futnota);
         })
         const elementi = [];
-        console.warn(Array.from(stih.tekst));
         Array.from(stih.tekst).forEach((el,index) => {
             elementi.push(el);
             if(futnoti.has(index+1)) {

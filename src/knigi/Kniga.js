@@ -2,11 +2,14 @@ import React from "react";
 import Glava from './Glava.js';
 import Meni from './Meni.js';
 
-export default function Kniga({kniga, sodrzina, setRefkniga, setGlava, setStih, setReferenca, setOpen}) {
+export default function Kniga({kniga, sodrzina, setRefkniga, setGlava, setStih, setReferenca, setOpen, glaviRef}) {
   const buildMeni = () => <Meni kniga={kniga} sodrzina={sodrzina} />
   const buildVoved = () => kniga.voved.map((el, index) => <span className='voved-linija' key={`voved-${index}`}>{el}</span>)
-  const buildGlavi = () => kniga.glavi.map((el, index) => <Glava glava={el} key={`glava-${index}`} kniga={kniga.kratko_ime}
-    setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih} setOpen={setOpen}/>)
+  const buildGlavi = () => kniga.glavi.map((el, index) => {
+    const getRef = glaviRef ? (element) => (glaviRef.current.push(element)) : null;
+    return (<Glava glava={el} key={`glava-${index}`} kniga={kniga.kratko_ime} ref={getRef}
+        setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih} setOpen={setOpen}/>)
+  });
 
   const buildKniga = () => {
     return (<div>

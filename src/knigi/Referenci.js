@@ -11,7 +11,7 @@ const Referenci = ({stih, style, kniga, glava, setRefkniga, setGlava, setStih, s
 
     const buildReferenci = () => stih.referenci.map((el, index) => {
         return (
-            <button className='referenca' onClick={() => refClick(el)}>{el.referenca}</button>
+            <button key={`refDugme-${index}`} className='referenca' onClick={() => refClick(el)}>{el.referenca}</button>
         );
     });
 

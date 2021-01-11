@@ -1,14 +1,15 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState, useEffect, forwardRef} from "react";
 import Stih from './Stih.js';
 import Referenci from './Referenci.js';
 import useObserver from './useObserver.js';
 
-export default function Glava({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setOpen}) {
+const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setOpen}, ref) => {
     const [offsets, setOffsets] = useState(null);
     const tekstRef = useRef(null);
     const refRefs = useRef([]);
     useEffect(() => {
         updateTops();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
     const updateTops = () => {
@@ -52,11 +53,13 @@ export default function Glava({glava, kniga, setRefkniga, setGlava, setStih, set
                 kniga={kniga} glava={glava.r_br} setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih} setOpen={setOpen}/>);
         });
 
-        return <div className='glava'>
-            <span className='glava-tekst' ref={tekstRef}>{stihovi}</span>
+        return <div className='glava' ref={ref}>
+            <span className='glava-tekst' ref={tekstRef} >{stihovi}</span>
             <span className='glava-referenci'>{referenci}</span>
         </div>;
     }
 
     return buildGlavi();
 }
+
+export default forwardRef(Glava);
