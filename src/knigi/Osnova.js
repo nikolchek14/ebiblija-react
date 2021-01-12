@@ -22,8 +22,7 @@ export default function Osnova() {
                         setOpen={setOpen}/>
     </Popup>
 
-    const updateBook = (el) => setKniga(biblija[el.target.attributes.kniga.nodeValue]);
-    const sodrzina = <Sodrzina key="sodrzina" biblija={biblija} setKniga={updateBook} kniga={kniga}/>
+    const sodrzina = <Sodrzina key="sodrzina" biblija={biblija} setKniga={setKniga} kniga={kniga}/>
 
     return <>{refPopup} {kniga
         ? <Kniga key={kniga.meta_fajl} kniga={kniga} sodrzina={sodrzina}

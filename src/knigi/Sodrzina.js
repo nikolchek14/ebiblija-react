@@ -10,7 +10,7 @@ function Sodrzina({biblija, setKniga, kniga}) {
                      key={`sodrzina_${el.meta_fajl}`}>
             <button
                 className={`sodrzina-button ${kniga && kniga.kratko_ime === el.kratko_ime ? 'sodrzina-aktivna' : ''}`}
-                onClick={setKniga} key={index}>
+                onClick={() => setKniga(biblija[index])} key={index}>
                 {el.kratko_ime}
             </button>
         </div>);
