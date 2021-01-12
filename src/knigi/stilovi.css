@@ -80,7 +80,7 @@
     text-align: left;
     border-bottom: 1px grey solid;
     position: fixed;
-    top: 0px;
+    top: 0;
     margin-bottom: 4px;
     box-shadow: 0 4px 2px -1px #8080808f;
     z-index: 999;
@@ -128,7 +128,7 @@ h4.voved-naslov {
     width: 80%;
     margin: 0 10%;
     text-align: justify;
-    padding: 10px 0%;
+    padding: 10px 0;
     align-items: stretch;
     display: flex;
 }
@@ -185,13 +185,14 @@ h4.voved-naslov {
     margin-right: 7px;
     border-bottom: 1px gainsboro solid;
     cursor: pointer;
+    padding-bottom: 1px;
 }
 
 .referenca:hover {
     margin-right: 7px;
-    border-bottom: 2px gainsboro solid;
-    font-weight: bold;
-    cursor: pointer;
+    border-bottom: 2px goldenrod solid;
+    padding-bottom: 0;
+    color: goldenrod;
 }
 
 .futnota-broj {
@@ -206,7 +207,7 @@ h4.voved-naslov {
 }
 
 .referenca-popup-content {
-    padding: 0px !important;
+    padding: 0 !important;
 }
 
 .ref-popup {
@@ -218,7 +219,7 @@ h4.voved-naslov {
     width: 25%;
     display: inline-block;
     border-right: 2px grey solid;
-    box-shadow: 5px 0px 5px grey;
+    box-shadow: 5px 0 5px grey;
     height: 100%;
     text-align: right;
     position: absolute;
@@ -250,7 +251,7 @@ h4.voved-naslov {
 }
 
 .ref-popup-refs {
-    padding: 10px 15px 10px 0px;
+    padding: 10px 15px 10px 0;
     display: inline-block;
 }
 
