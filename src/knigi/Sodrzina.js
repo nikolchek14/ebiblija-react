@@ -2,8 +2,7 @@ import React from "react";
 
 function Sodrzina({biblija, setKniga, kniga}) {
 
-    let starZavet1 = [];
-    let starZavet2 = [];
+    let starZavet = [];
     let novZavet = [];
 
     const buildLink = (el, index) => {
@@ -11,16 +10,14 @@ function Sodrzina({biblija, setKniga, kniga}) {
                      key={`sodrzina_${el.meta_fajl}`}>
             <button
                 className={`sodrzina-button ${kniga && kniga.kratko_ime === el.kratko_ime ? 'sodrzina-aktivna' : ''}`}
-                onClick={setKniga} kniga={index}>
+                onClick={setKniga} key={index}>
                 {el.kratko_ime}
             </button>
         </div>);
     }
     const buildLinks = () => biblija.forEach((el, index) => {
-        if (index < 25) {
-            starZavet1.push(buildLink(el, index));
-        } else if (index >= 25 && index < 50) {
-            starZavet2.push(buildLink(el, index));
+        if (index < 50) {
+            starZavet.push(buildLink(el, index));
         } else {
             novZavet.push(buildLink(el, index));
         }
@@ -31,12 +28,11 @@ function Sodrzina({biblija, setKniga, kniga}) {
         return (<div className='sodrzina-wrapper'>
        <span className='sodrzina'>
        <span className='sodrzina-naslov'> Стар Завет </span>
-       <span className='sodrzina'>{starZavet1}</span>
-       <span className='sodrzina'>{starZavet2}</span>
+       <span className='sodrzina-list' style={{direction: "rtl"}}>{starZavet}</span>
        </span>
             <span className='sodrzina'>
        <span className='sodrzina-naslov'> Нов Завет </span>
-       <span className='sodrzina'>{novZavet}</span>
+       <span className='sodrzina-list'>{novZavet}</span>
        </span>
         </div>)
     }

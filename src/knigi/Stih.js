@@ -26,7 +26,6 @@ const Stih = ({stih, glavaBr}) => {
             if (futnoti.has(index + 1)) {
                 elementi.push(futnoti.get(index + 1));
             }
-            ;
         })
         return elementi;
     }

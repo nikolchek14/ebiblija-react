@@ -1,7 +1,6 @@
 .sodrzina-popup-content {
     width: 80% !important;
     height: 90%;
-    overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,11 +15,46 @@
 
 .sodrzina-wrapper {
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
     text-align: center;
+    vertical-align: top;
 }
 
 .sodrzina {
-    display: inline-table;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.sodrzina-list {
+    height: calc(100% - 52px);
+    overflow-y: scroll;
+    display: block;
+}
+
+.sodrzina-popup-content .sodrzina-list {
+    height: calc(90% - 47px);
 }
 
 .sodrzina-link {
@@ -56,9 +90,6 @@
 
 .sodrzina-button:hover {
     background-color: #4cc9f0;
-    -webkit-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
-    -moz-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
-    box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
     color: white;
     padding: 12px 8px;
     border-bottom: 2px transparent solid;
@@ -66,9 +97,6 @@
 
 .sodrzina-aktivna {
     background-color: #b9e769;
-    -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
-    -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
-    box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
     color: white;
     padding: 12px 8px;
     border-bottom: 2px transparent solid;
