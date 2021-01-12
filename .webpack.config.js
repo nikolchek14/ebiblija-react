@@ -1,5 +1,13 @@
-// define child rescript
-module.exports = config => {
-    config.target = 'electron-renderer';
-    return config;
-}
+const webpack = require('webpack');
+
+module.exports = {
+    entry: './src/index.js',
+    module: {
+        rules: [
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
+        ],
+    },
+};

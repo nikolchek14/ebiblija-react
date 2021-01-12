@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Hamburger from 'hamburger-react'
+import { ReactComponent as LeftIcon } from '../icons/chevron-left.svg'
 
 export default function Meni({kniga, sodrzina}) {
     const [aktivno, setAktivno] = useState(false);
@@ -13,6 +14,7 @@ export default function Meni({kniga, sodrzina}) {
                     {sodrzina}
                 </Popup>
              </span>
+        <LeftIcon />
         <span className='meni-item meni-meta'>{kniga.celo_ime}</span>
     </div>;
 }
