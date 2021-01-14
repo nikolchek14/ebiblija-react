@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "@svgr/webpack": "^5.5.0",
     "electron-is-dev": "^1.2.0",
     "hamburger-react": "^2.4.0",
     "hamburgers": "^1.1.3",

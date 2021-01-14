@@ -2,8 +2,8 @@ import React from "react";
 import Glava from './Glava.js';
 import Meni from './Meni.js';
 
-export default function Kniga({kniga, sodrzina, setRefkniga, setGlava, setStih, setReferenca, setOpen, glaviRef}) {
-    const buildMeni = () => <Meni kniga={kniga} sodrzina={sodrzina}/>
+export default function Kniga({kniga, sodrzina, setRefkniga, setGlava, setStih, setReferenca, setOpen, glaviRef, updateKniga, knigaInd}) {
+    const buildMeni = () => <Meni kniga={kniga} sodrzina={sodrzina} updateKniga={updateKniga} knigaInd={knigaInd}/>
     const buildVoved = () => kniga.voved.map((el, index) => <span className='voved-linija'
                                                                   key={`voved-${index}`}>{el}</span>)
     const buildGlavi = () => {
