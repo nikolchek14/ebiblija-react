@@ -1,11 +1,11 @@
 import React, {forwardRef} from "react";
 
 const Referenci = ({stih, style, kniga, glava, setRefkniga, setGlava, setStih, setReferenca, setOpen}, ref) => {
-    const refClick = (ref) => {
+    const refClick = (referenca) => {
         setRefkniga(kniga);
         setGlava(glava);
         setStih(stih);
-        setReferenca(ref);
+        setReferenca(referenca);
         setOpen(true);
     }
 

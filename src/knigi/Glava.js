@@ -3,7 +3,7 @@ import Stih from './Stih.js';
 import Referenci from './Referenci.js';
 import useObserver from './useObserver.js';
 
-const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setOpen}, ref) => {
+const Glava = ({glava, kniga, setRefkniga, setGlava, setStih, setReferenca, setOpen, glavaIndex}, ref) => {
     const [offsets, setOffsets] = useState(null);
     const tekstRef = useRef(null);
     const refRefs = useRef([]);

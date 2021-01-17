@@ -15,6 +15,9 @@ export default function Osnova() {
     const [referenca, setReferenca] = useState(null);
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
+
+    const updateKniga = (index) => setKniga(biblija[index]);
+
     const refPopup = <Popup className='referenca-popup' open={open} modal={true} closeOnDocumentClick
                             onClose={closeModal}>
         <ReferencaPopup stih={stih} referenca={referenca} kniga={refkniga} glava={glava} biblija={biblija}
@@ -22,12 +25,11 @@ export default function Osnova() {
                         setOpen={setOpen}/>
     </Popup>
 
-    const updateBook = (el) => setKniga(biblija[el.target.attributes.kniga.nodeValue]);
-    const sodrzina = <Sodrzina key="sodrzina" biblija={biblija} setKniga={updateBook} kniga={kniga}/>
+    const sodrzina = <Sodrzina key="sodrzina" biblija={biblija} setKniga={setKniga} kniga={kniga}/>
 
     return <>{refPopup} {kniga
         ? <Kniga key={kniga.meta_fajl} kniga={kniga} sodrzina={sodrzina}
                  setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih}
-                 setOpen={setOpen}/>
+                 setOpen={setOpen} updateKniga={updateKniga} knigaInd={biblija.indexOf(kniga)} />
         : sodrzina}</>;
 }

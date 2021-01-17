@@ -1,7 +1,6 @@
 .sodrzina-popup-content {
     width: 80% !important;
     height: 90%;
-    overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,11 +15,49 @@
 
 .sodrzina-wrapper {
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
     text-align: center;
+    vertical-align: top;
 }
 
 .sodrzina {
-    display: inline-table;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* width */
+.sodrzina-list::-webkit-scrollbar {
+    width: 1px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.sodrzina-list {
+    height: calc(100% - 52px);
+    overflow-y: scroll;
+    display: block;
+}
+
+.sodrzina-popup-content .sodrzina-list {
+    height: calc(90% - 47px);
 }
 
 .sodrzina-link {
@@ -56,9 +93,6 @@
 
 .sodrzina-button:hover {
     background-color: #4cc9f0;
-    -webkit-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
-    -moz-box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
-    box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
     color: white;
     padding: 12px 8px;
     border-bottom: 2px transparent solid;
@@ -66,9 +100,6 @@
 
 .sodrzina-aktivna {
     background-color: #b9e769;
-    -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
-    -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
-    box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
     color: white;
     padding: 12px 8px;
     border-bottom: 2px transparent solid;
@@ -80,7 +111,7 @@
     text-align: left;
     border-bottom: 1px grey solid;
     position: fixed;
-    top: 0px;
+    top: 0;
     margin-bottom: 4px;
     box-shadow: 0 4px 2px -1px #8080808f;
     z-index: 999;
@@ -99,6 +130,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-weight: 500;
+    width: 50%;
 }
 
 .voved {
@@ -128,7 +160,7 @@ h4.voved-naslov {
     width: 80%;
     margin: 0 10%;
     text-align: justify;
-    padding: 10px 0%;
+    padding: 10px 0;
     align-items: stretch;
     display: flex;
 }
@@ -185,13 +217,14 @@ h4.voved-naslov {
     margin-right: 7px;
     border-bottom: 1px gainsboro solid;
     cursor: pointer;
+    padding-bottom: 1px;
 }
 
 .referenca:hover {
     margin-right: 7px;
-    border-bottom: 2px gainsboro solid;
-    font-weight: bold;
-    cursor: pointer;
+    border-bottom: 2px goldenrod solid;
+    padding-bottom: 0;
+    color: goldenrod;
 }
 
 .futnota-broj {
@@ -206,7 +239,7 @@ h4.voved-naslov {
 }
 
 .referenca-popup-content {
-    padding: 0px !important;
+    padding: 0 !important;
 }
 
 .ref-popup {
@@ -218,7 +251,7 @@ h4.voved-naslov {
     width: 25%;
     display: inline-block;
     border-right: 2px grey solid;
-    box-shadow: 5px 0px 5px grey;
+    box-shadow: 5px 0 5px grey;
     height: 100%;
     text-align: right;
     position: absolute;
@@ -250,7 +283,7 @@ h4.voved-naslov {
 }
 
 .ref-popup-refs {
-    padding: 10px 15px 10px 0px;
+    padding: 10px 15px 10px 0;
     display: inline-block;
 }
 
@@ -274,4 +307,57 @@ h4.voved-naslov {
     font-weight: bold;
     cursor: pointer;
     color: black;
+}
+
+.nav-icon {
+    margin: 0 14px;
+    height: 42px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    stroke-width: 2.5px;
+}
+
+.nav-disable {
+    cursor: default;
+    color: lightgrey;
+    stroke-width: 1.7px;
+}
+
+.nav-disable:hover {
+    stroke-width: 1.7px;
+}
+
+.meni-meta-tekst-wrap {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 70%;
+}
+
+.meni-meta-tekst {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.meni-meta-naslov {
+    top: 25%;
+    height: 22px;
+    overflow: hidden;
+}
+.meni-meta-podnaslov {
+    top: 75%;
+    color: grey;
+    font-size: small;
+    font-weight: 500;
+    text-align: center;
+    height: 35px;
+    overflow: hidden;
 }

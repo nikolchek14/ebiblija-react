@@ -26,7 +26,6 @@ const Stih = ({stih, glavaBr}) => {
             if (futnoti.has(index + 1)) {
                 elementi.push(futnoti.get(index + 1));
             }
-            ;
         })
         return elementi;
     }
@@ -35,7 +34,7 @@ const Stih = ({stih, glavaBr}) => {
         return (<div className='stih-wrapper'>
             {buildPodnaslovi()}
             <span
-                className={`stih-position ${stih.r_br === 1 ? 'glava-broj' : 'stih-broj'}`}>{stih.r_br === 1 ? glavaBr : stih.r_br}</span>
+                className={`stih-position ${parseInt(stih.r_br) === 1 ? 'glava-broj' : 'stih-broj'}`}>{parseInt(stih.r_br) === 1 ? glavaBr : stih.r_br}</span>
             {stih.futnoti ? buildStihFutnoti() : stih.tekst}
         </div>)
     }
