@@ -16,9 +16,15 @@ export default function Meni({kniga, sodrzina, updateKniga, knigaInd}) {
                 </Popup>
              </span>
         <span className='meni-item meni-meta'>
-            {knigaInd > 0 && <LeftIcon className='nav-icon' onClick={() => updateKniga(knigaInd-1)}/>}
+            <LeftIcon
+                className={`${knigaInd < 1 ? 'nav-disable' : '' } nav-icon`}
+                onClick={knigaInd > 0 ? () => updateKniga(knigaInd-1) : () => {}}
+            />
             {kniga.celo_ime}
-            {knigaInd < 76 && <RightIcon className='nav-icon' onClick={() => updateKniga(knigaInd+1)}/>}
+            <RightIcon
+                className={`${knigaInd > 75 ? 'nav-disable' : '' } nav-icon`}
+                onClick={knigaInd < 76 ? () => updateKniga(knigaInd+1) : () => {}}
+            />
         </span>
     </div>;
 }

@@ -306,8 +306,23 @@ h4.voved-naslov {
 }
 
 .nav-icon {
-    padding: 0 14px;
+    margin: 0 14px;
     height: 42px;
     width: 42px;
     height: 42px;
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    stroke-width: 2.5px;
+}
+
+.nav-disable {
+    cursor: default;
+    color: lightgrey;
+    stroke-width: 1.7px;
+}
+
+.nav-disable:hover {
+    stroke-width: 1.7px;
 }
