@@ -16,7 +16,7 @@ export default function Kniga({kniga, sodrzina, setRefkniga, setGlava, setStih, 
             const getRef = glaviRef ? (element) => (glaviRef.current.push(element)) : (element) => (refPos.current.push(element));
             return (<Glava glava={el} key={`glava-${index}`} kniga={kniga.kratko_ime} ref={getRef}
                            setRefkniga={setRefkniga} setGlava={setGlava} setReferenca={setReferenca} setStih={setStih}
-                           setOpen={setOpen}/>)
+                           setOpen={setOpen} glavaIndex={index} />)
         });
     }
 
