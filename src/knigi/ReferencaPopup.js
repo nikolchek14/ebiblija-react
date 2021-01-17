@@ -15,12 +15,10 @@ export default function ReferencaPopup({
                                        }) {
     const glaviRef = useRef([]);
     useEffect(() => {
-        console.warn(glaviRef.current);
         const meta_part = referenca.meta_link.substring(referenca.meta_link.indexOf('#') + 1);
         const refGlava = parseInt(meta_part.substring(meta_part.indexOf('g') + 1, meta_part.indexOf('s')));
         const refStih = parseInt(meta_part.substring(meta_part.indexOf('s') + 1));
         const refs = glaviRef.current.filter((value) => value !== null);
-        console.warn(refs);
         refs[refGlava - 1] && refs[refGlava - 1].children[0].children[refStih - 1].scrollIntoView();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [kniga, glava, stih, referenca]);

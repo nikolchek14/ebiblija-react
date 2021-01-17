@@ -28,8 +28,11 @@
 }
 
 /* width */
-::-webkit-scrollbar {
+.sodrzina-list::-webkit-scrollbar {
     width: 1px;
+}
+::-webkit-scrollbar {
+    width: 10px;
 }
 
 /* Track */
@@ -346,7 +349,12 @@ h4.voved-naslov {
 
 .meni-meta-naslov {
     top: 25%;
+    height: 22px;
+    overflow: hidden;
 }
 .meni-meta-podnaslov {
     top: 75%;
+    color: grey;
+    font-size: small;
+    font-weight: 500;
 }
