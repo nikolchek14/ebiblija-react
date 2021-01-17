@@ -127,6 +127,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-weight: 500;
+    width: 50%;
 }
 
 .voved {
@@ -325,4 +326,27 @@ h4.voved-naslov {
 
 .nav-disable:hover {
     stroke-width: 1.7px;
+}
+
+.meni-meta-tekst-wrap {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 70%;
+}
+
+.meni-meta-tekst {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.meni-meta-naslov {
+    top: 25%;
+}
+.meni-meta-podnaslov {
+    top: 75%;
 }

@@ -20,7 +20,10 @@ export default function Meni({kniga, sodrzina, updateKniga, knigaInd}) {
                 className={`${knigaInd < 1 ? 'nav-disable' : '' } nav-icon`}
                 onClick={knigaInd > 0 ? () => updateKniga(knigaInd-1) : () => {}}
             />
-            {kniga.celo_ime}
+            <span className='meni-meta-tekst-wrap'>
+                <span className='meni-meta-tekst meni-meta-naslov'>{kniga.celo_ime}</span>
+                <span className='meni-meta-tekst meni-meta-podnaslov'>поднаслов</span>
+            </span>
             <RightIcon
                 className={`${knigaInd > 75 ? 'nav-disable' : '' } nav-icon`}
                 onClick={knigaInd < 76 ? () => updateKniga(knigaInd+1) : () => {}}
