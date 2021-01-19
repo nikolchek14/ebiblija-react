@@ -7,18 +7,18 @@ import { ReactComponent as RightIcon } from '../icons/chevron-right.svg'
 
 const isBrowser = typeof window !== `undefined`;
 
-export default function Meni({kniga, sodrzina, updateKniga, knigaInd, glavi}) {
+export default function Meni({kniga, sodrzina, updateKniga, knigaInd, glavi, openNav}) {
     const [aktivno, setAktivno] = useState(false);
     const [podnaslov, setPodnaslov] = useState(null);
     const [podmeta, setPodmeta] = useState('Вовед');
 
     const getPodnaslovText = () => {
         if (!isBrowser) return 0;
-        const glava = glavi.current.filter((el) => el.offsetTop - 50 < window.pageYOffset);
+        const glava = glavi.current.filter((el) => el != null && el.offsetTop - 56 < window.pageYOffset);
         if (glava.length > 0) {
         const glavaOffset = glava[glava.length-1].offsetTop;
         const glavaBroj = glava[glava.length-1].children[0].children[0].getElementsByClassName('glava-broj')[0].innerHTML;
-        const podnaslovi = Array.from(glava[glava.length-1].children[0].getElementsByClassName('podnaslov')).filter((el) => el.offsetTop - 50 < window.pageYOffset - glavaOffset);
+        const podnaslovi = Array.from(glava[glava.length-1].children[0].getElementsByClassName('podnaslov')).filter((el) => glavaOffset + el.offsetTop - 56 < window.pageYOffset);
         const podnaslovText = podnaslovi && podnaslovi.length > 0 ? setPodnaslov(podnaslovi[podnaslovi.length-1].innerHTML) : podnaslov;
         return `${glavaBroj} | ${podnaslovText || podnaslov}`;
         } else {
@@ -49,7 +49,7 @@ export default function Meni({kniga, sodrzina, updateKniga, knigaInd, glavi}) {
                 className={`${knigaInd < 1 ? 'nav-disable' : '' } nav-icon`}
                 onClick={knigaInd > 0 ? () => updateKniga(knigaInd-1) : () => {}}
             />
-            <span className='meni-meta-tekst-wrap'>
+            <span className='meni-meta-tekst-wrap' onClick={() => openNav(kniga)}>
                 <span className='meni-meta-tekst meni-meta-naslov'>{kniga.kratko_ime}</span>
                 <span className='meni-meta-tekst meni-meta-podnaslov'>{podmeta}</span>
             </span>

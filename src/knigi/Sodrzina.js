@@ -1,18 +1,19 @@
 import React from "react";
+import {ReactComponent as RightIcon} from '../icons/chevron-right.svg'
 
-function Sodrzina({biblija, setKniga, kniga}) {
+function Sodrzina({biblija, setKniga, kniga, openNav}) {
 
     let starZavet = [];
     let novZavet = [];
 
     const buildLink = (el, index) => {
         return (<div className='sodrzina-link'
-                     key={`sodrzina_${el.meta_fajl}`}>
-            <button
-                className={`sodrzina-button ${kniga && kniga.kratko_ime === el.kratko_ime ? 'sodrzina-aktivna' : ''}`}
-                onClick={() => setKniga(biblija[index])} key={index}>
-                {el.kratko_ime}
-            </button>
+                     key={`sodrzina_${el.meta_fajl}`} >
+            <div className={`sodrzina-button ${kniga && kniga.kratko_ime === el.kratko_ime ? 'sodrzina-aktivna' : ''}`}>
+                <span className='sodrzina-dugme' onClick={() => setKniga(biblija[index])}
+                      key={index}>{el.kratko_ime}</span>
+                <RightIcon onClick={() => openNav(biblija[index])}/>
+            </div>
         </div>);
     }
     const buildLinks = () => biblija.forEach((el, index) => {
